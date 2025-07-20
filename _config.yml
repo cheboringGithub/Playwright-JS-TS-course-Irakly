@@ -1,13 +1,13 @@
 title: "Playwright JS/TS Course"
 description: "Учебник по автоматизации на Playwright JS/TS"
-remote_theme: jekyll/minima
+remote_theme: "mmistakes/minimal-mistakes@latest"
 baseurl: "/Playwright-JS-TS-course-Inna"
 url: "https://cheboringgithub.github.io"
 
-# Sidebar navigation (custom)
-sidebar:
+# Minimal Mistakes navigation (sidebar)
+navigation:
   - title: "Главная"
-    url: "/README"
+    url: "/"
   - title: "Область знаний"
     url: "/knowledge-scope"
   - title: "Занятие 1"
