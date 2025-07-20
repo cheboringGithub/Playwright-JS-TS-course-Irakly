@@ -8,27 +8,44 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #7ec384;
+  color: #a3c9a8;
   font-weight: 600;
   margin-top: 2em;
   font-family: inherit;
 }
 
 a {
-  color: #7ec384;
-  text-decoration: underline;
-  transition: color 0.2s;
+  color: #a3c9a8;
+  text-decoration: none;
+  border-bottom: 1px dashed #a3c9a8;
+  transition: color 0.2s, border-bottom 0.2s;
+  padding: 2px 0;
 }
 
 a:hover {
-  color: #4e8c5e;
+  color: #7ea68e;
+  border-bottom: 1px solid #7ea68e;
 }
 
-.main-link-arrow {
-  display: inline-block;
-  margin-right: 0.5em;
-  font-size: 1.2em;
-  vertical-align: middle;
+.main-link-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 1.1em;
+  color: #a3c9a8;
+  background: #29292c;
+  border-radius: 6px;
+  padding: 0.3em 0.8em;
+  margin: 1em 0 2em 0;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: background 0.2s, color 0.2s;
+}
+
+.main-link-home:hover {
+  background: #232326;
+  color: #7ea68e;
 }
 
 code, pre {
@@ -63,8 +80,9 @@ table th, table td {
 }
 
 table th {
-  background: #4e8c5e;
-  color: #fff;
+  background: #7ea68e;
+  color: #232326;
+  font-weight: 600;
 }
 
 table tr:nth-child(even) {
@@ -80,6 +98,6 @@ ul, ol {
   background: #29292c;
 }
 ::-webkit-scrollbar-thumb {
-  background: #7ec384;
+  background: #a3c9a8;
   border-radius: 4px;
 } 
