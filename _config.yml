@@ -1,6 +1,6 @@
 title: "Playwright JS/TS Course"
 description: "Учебник по автоматизации на Playwright JS/TS"
-remote_theme: "mmistakes/minimal-mistakes@latest"
+remote_theme: "mmistakes/minimal-mistakes"
 baseurl: "/Playwright-JS-TS-course-Inna"
 url: "https://cheboringgithub.github.io"
 
