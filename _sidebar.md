@@ -1,5 +1,0 @@
-- [Главная](/README.md)
-- [Область знаний](/knowledge-scope.md)
-- **Уроки**
-  - [Занятие 1](/lessons/lesson-1.md)
-  - [Занятие 2](/lessons/lesson-2.md) 
