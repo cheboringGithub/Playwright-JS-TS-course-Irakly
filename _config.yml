@@ -7,10 +7,13 @@ url: "https://cheboringgithub.github.io"
 # Sidebar navigation (custom)
 sidebar:
   - title: "Главная"
-    url: "/"
+    url: "/README"
   - title: "Область знаний"
     url: "/knowledge-scope"
   - title: "Занятие 1"
     url: "/lessons/lesson-1"
   - title: "Занятие 2"
-    url: "/lessons/lesson-2" 
+    url: "/lessons/lesson-2"
+
+# Set README.md as the default landing page
+index: README.md 
