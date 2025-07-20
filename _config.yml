@@ -1,6 +1,6 @@
 title: "Playwright JS/TS Course"
 description: "Учебник по автоматизации на Playwright JS/TS"
-theme: minima
+remote_theme: jekyll/minima
 baseurl: ""
 url: ""
 
