@@ -1,6 +1,6 @@
 title: "Playwright JS/TS Course"
 description: "Учебник по автоматизации на Playwright JS/TS"
-theme: merlot
+theme: jekyll-theme-midnight
 baseurl: "/Playwright-JS-TS-course-Inna"
 url: "https://cheboringgithub.github.io"
 
