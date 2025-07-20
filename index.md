@@ -5,11 +5,9 @@ title: Главная
 
 # Playwright JS/TS Course
 
-[Главная](README.md) | [Область знаний](knowledge-scope.md) | [Занятие 1](lessons/lesson-1.md) | [Занятие 2](lessons/lesson-2.md)
+[Область знаний](knowledge-scope.md) | [Занятие 1](lessons/lesson-1.md) | [Занятие 2](lessons/lesson-2.md)
 
 ---
-
-Это тестовая страница. Если вы видите этот текст — Docsify работает корректно.
 
 ## 📋 [Входное интервью](https://docs.google.com/spreadsheets/d/1tCCXvsZdnVEX9t_DtAmzbv3sevNBlCTX/edit?gid=1329734940#gid=1329734940)
 

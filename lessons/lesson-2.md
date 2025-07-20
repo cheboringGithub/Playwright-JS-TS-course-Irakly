@@ -3,8 +3,6 @@ layout: default
 title: Занятие 2
 ---
 
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css">
-
 <a href="{{ site.baseurl }}" class="main-link-home">&#8592; На главную</a>
 
 # Занятие 2
