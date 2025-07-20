@@ -5,7 +5,6 @@ title: Область знаний
 
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css">
 
-<div class="main-container">
 <a href="{{ site.baseurl }}" class="main-link-home">&#8592; На главную</a>
 
 # Область знаний
@@ -133,4 +132,3 @@ title: Область знаний
 | | Novice | Medium | Advanced |
 |---|--------|--------|----------|
 | JavaScript | типы данных, переменные, scoping, closures, функции, массивы, async | prototypes, classes, call/bind/apply, spread/rest, destructuring, RegExp, ошибки | modules, пользовательские ошибки, fibers, современные возможности |
-</div>
