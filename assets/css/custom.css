@@ -7,11 +7,31 @@ body {
   font-size: 18px;
 }
 
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5em 2em 2em 2em;
+  background: #232326;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  min-height: 90vh;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #a3c9a8;
   font-weight: 600;
   margin-top: 2em;
   font-family: inherit;
+  text-align: left;
+}
+
+p, ul, ol, table, pre, code, .main-link-home {
+  text-align: left;
+}
+
+p, ul, ol, table {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 a {
@@ -100,4 +120,41 @@ ul, ol {
 ::-webkit-scrollbar-thumb {
   background: #a3c9a8;
   border-radius: 4px;
+}
+
+/* Главная страница */
+.home-title {
+  font-size: 2.6em;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  color: #a3c9a8;
+  letter-spacing: 1px;
+}
+.home-subtitle {
+  font-size: 1.3em;
+  color: #b7cfc2;
+  margin-bottom: 2em;
+  margin-top: 0.2em;
+}
+.home-links {
+  margin-top: 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+.home-links a {
+  font-size: 1.1em;
+  padding: 0.5em 1em;
+  background: #29292c;
+  border-radius: 6px;
+  color: #a3c9a8;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+}
+.home-links a:hover {
+  background: #232326;
+  color: #7ea68e;
 } 
