@@ -1,0 +1,16 @@
+title: "Playwright JS/TS Course"
+description: "Учебник по автоматизации на Playwright JS/TS"
+theme: minima
+baseurl: ""
+url: ""
+
+# Sidebar navigation (custom)
+sidebar:
+  - title: "Главная"
+    url: "/"
+  - title: "Область знаний"
+    url: "/knowledge-scope"
+  - title: "Занятие 1"
+    url: "/lessons/lesson-1"
+  - title: "Занятие 2"
+    url: "/lessons/lesson-2" 

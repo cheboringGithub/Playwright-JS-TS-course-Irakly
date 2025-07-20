@@ -1,3 +1,10 @@
+---
+layout: default
+title: Область знаний
+---
+
+[На главную](./)
+
 ## Manual testing (Processes)
 
 ### 📌 Processes, Methodologies

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Занятие 2
+---
+
+[На главную](../..)
+
 # Занятие 2
 
 ## Тема 1: Framework Architecture (Multilayered)
