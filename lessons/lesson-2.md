@@ -7,13 +7,9 @@ title: Занятие 2
 
 # Занятие 2
 
-- [К теме 1](#framework-architecture)
-- [К теме 2](#loggers-reporters)
-- [К теме 3](#fixtures)
-
 ---
 
-## Тема 1: Framework Architecture (Multilayered) {#framework-architecture}
+## Тема 1: Framework Architecture (Multilayered)
 
 **Основные вопросы:**
 - Что такое фреймворк для автоматизированного тестирования (и в чем отличие от того, что называют фреймворком разработчики)?
@@ -24,7 +20,7 @@ title: Занятие 2
 
 ---
 
-## Тема 2: Loggers, Reporters {#loggers-reporters}
+## Тема 2: Loggers, Reporters
 
 **Основные вопросы:**
 - Что такое репортеры и для чего они нужны?
@@ -36,7 +32,7 @@ title: Занятие 2
 
 ---
 
-## Тема 3: Fixtures {#fixtures}
+## Тема 3: Fixtures
 
 **Основные вопросы:**
 - Для чего нужны фикстуры и какие проблемы они решают?
