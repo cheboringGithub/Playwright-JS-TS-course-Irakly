@@ -1,8 +1,8 @@
 title: "Playwright JS/TS Course"
 description: "Учебник по автоматизации на Playwright JS/TS"
 remote_theme: jekyll/minima
-baseurl: ""
-url: ""
+baseurl: "/Playwright-JS-TS-course-Inna"
+url: "https://cheboringgithub.github.io"
 
 # Sidebar navigation (custom)
 sidebar:
