@@ -1,0 +1,75 @@
+body {
+  background: #1b1b1d url('../images/playwright-logo.png') no-repeat fixed right bottom;
+  background-size: 300px;
+  color: #f3f3f3;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #44ba4a;
+  font-weight: 700;
+  margin-top: 2em;
+}
+
+a {
+  color: #44ba4a;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #1e8d22;
+}
+
+code, pre {
+  background: #232326;
+  color: #f3f3f3;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 1em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 2em 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  background: #232326;
+  color: #f3f3f3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th, table td {
+  border: 1px solid #333;
+  padding: 0.75em 1em;
+  text-align: left;
+}
+
+table th {
+  background: #1e8d22;
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background: #222;
+}
+
+ul, ol {
+  margin-left: 2em;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #232326;
+}
+::-webkit-scrollbar-thumb {
+  background: #44ba4a;
+  border-radius: 4px;
+} 
