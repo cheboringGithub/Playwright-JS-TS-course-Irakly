@@ -3,12 +3,13 @@ layout: default
 title: Область знаний
 ---
 
-[На главную](./)
+[На главную]({{ site.baseurl }}/)
 
 ## Manual testing (Processes)
 
 ### 📌 Processes, Methodologies
 **Темы:**
+
 - agile
 - scrum
 - kanban
@@ -25,6 +26,7 @@ title: Область знаний
 
 ### 📌 Estimations
 **Темы:**
+
 - Estimations experience
 - Functionality points
 - Story points
@@ -39,6 +41,7 @@ title: Область знаний
 
 ### 📌 Test documentation and bug tracking systems
 **Темы:**
+
 - test case
 - check list
 - bug report
@@ -62,6 +65,7 @@ title: Область знаний
 
 ### 📌 Automation testing, basic theory
 **Темы:**
+
 - automation testing types
 - testing pyramid (reverse testing pyramid)
 - implementation automation criteria on the project
@@ -74,6 +78,7 @@ title: Область знаний
 
 ### 📌 Version Control System - Git
 **Темы:**
+
 - git basics
 - git branching
 - git commands
