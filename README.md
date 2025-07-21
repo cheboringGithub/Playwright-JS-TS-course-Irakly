@@ -2,26 +2,26 @@
 
 ### Занятие 1
 **Теория:**
-- Тема 1: Node.js & NPM
-- Тема 2: Git & Git Flow
+- Тема 1: **Node.js** & **NPM**
+- Тема 2: **Git** & **Git Flow**
 
 **Практика:**
 - Создаём новый репозиторий
-- В ветке, отколотой от `main`, инициализируем Playwright-проект
+- В ветке, отколотой от `main`, инициализируем **Playwright**-проект
 - Добавляем `README.md` и `.gitignore`
 - Делаем merge request в `main` (добавляем меня в ревьюеры — я аппрувлю и мержу)
 
 ### Занятие 2
 **Теория:**
-- Тема 1: Automation Testing Framework (Playwright)
+- Тема 1: Automation Testing Framework (**Playwright**)
 - Тема 2: Locators
 - Тема 3: Waiters
 
 **Практика:**
 - Создаём первые тесты (предварительно согласуем System Under Test)
-- Без абстракций и Page Object'ов
+- Без абстракций и **Page Object**'ов
 - Merge request в `main` (ревью от меня)
-- Упражнения: CSS selectors, XPath
+- Упражнения: **CSS selectors**, **XPath**
 - Упражнения на ожидания (явные, неявные, fluent)
 - Таймауты в тестах
 
@@ -29,12 +29,12 @@
 
 ### Занятие 3
 **Теория:**
-- Framework Architecture (Multilayered, PageObject, PageElements, Functional Helpers)
-- Loggers, Reporters
-- Fixtures
+- Framework Architecture (Multilayered, **PageObject**, **PageElements**, Functional Helpers)
+- **Loggers**, **Reporters**
+- **Fixtures**
 
 **Практика:**
-- Архитектура: Page Objects, Page Elements, Helpers
+- Архитектура: **Page Objects**, **Page Elements**, Helpers
 - Кастомизация логгера и репортера
 - Создание и настройка фикстур
 

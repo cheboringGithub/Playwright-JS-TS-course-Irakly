@@ -24,15 +24,15 @@ title: Главная
 
 ### Занятие 2
 **Теория:**
-- Тема 1: Automation Testing Framework (Playwright)
+- Тема 1: Automation Testing Framework (**Playwright**)
 - Тема 2: Locators
 - Тема 3: Waiters
 
 **Практика:**
 - Создаём первые тесты (предварительно согласуем System Under Test)
-- Без абстракций и Page Object'ов
+- Без абстракций и **Page Object**'ов
 - Merge request в `main` (ревью от меня)
-- Упражнения: CSS selectors, XPath
+- Упражнения: **CSS selectors**, **XPath**
 - Упражнения на ожидания (явные, неявные, fluent)
 - Таймауты в тестах
 
@@ -40,12 +40,12 @@ title: Главная
 
 ### Занятие 3
 **Теория:**
-- Framework Architecture (Multilayered, PageObject, PageElements, Functional Helpers)
-- Loggers, Reporters
-- Fixtures
+- Framework Architecture (Multilayered, **PageObject**, **PageElements**, Functional Helpers)
+- **Loggers**, **Reporters**
+- **Fixtures**
 
 **Практика:**
-- Архитектура: Page Objects, Page Elements, Helpers
+- Архитектура: **Page Objects**, **Page Elements**, Helpers
 - Кастомизация логгера и репортера
 - Создание и настройка фикстур
 
