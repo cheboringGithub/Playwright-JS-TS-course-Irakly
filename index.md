@@ -5,7 +5,7 @@ title: Главная
 
 # Playwright JS/TS Course
 
-[Область знаний](knowledge-scope.md) | [Занятие 1](lessons/lesson-1.md) | [Занятие 2](lessons/lesson-2.md)
+[Область знаний](knowledge-scope.md) | [Занятие 1](lessons/lesson-1.md)
 
 ---
 
