@@ -1,5 +1,3 @@
-## 📋 [Входное интервью](https://docs.google.com/spreadsheets/d/1tCCXvsZdnVEX9t_DtAmzbv3sevNBlCTX/edit?gid=1329734940#gid=1329734940)
-
 ## 📚 План занятий
 
 ### Занятие 1
