@@ -169,8 +169,8 @@ title: Область знаний
 </tr>
 <tr>
 <td><b>JavaScript</b></td>
-<td>Типы данных<br>Переменные<br>scoping<br>closures<br>функции<br>массивы<br>async</td>
-<td>Prototypes<br>classes<br>call/bind/apply<br>spread/rest<br>destructuring<br>RegExp<br>ошибки</td>
-<td>Modules<br>пользовательские ошибки<br>fibers<br>современные возможности</td>
+<td>Типы данных<br>Переменные<br><code>scoping</code><br><code>closures</code><br>Функции<br>Массивы<br><code>async</code></td>
+<td><code>Prototypes</code><br><code>classes</code><br><code>call</code>/<code>bind</code>/<code>apply</code><br><code>spread</code>/<code>rest</code><br><code>destructuring</code><br><code>RegExp</code><br>Ошибки</td>
+<td><code>Modules</code><br>Пользовательские ошибки<br><code>fibers</code><br>Современные возможности</td>
 </tr>
 </table>
