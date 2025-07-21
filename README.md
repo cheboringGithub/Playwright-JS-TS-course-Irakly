@@ -11,6 +11,20 @@
 - Добавляем `README.md` и `.gitignore`
 - Делаем merge request в `main` (добавляем меня в ревьюеры — я аппрувлю и мержу)
 
+### Занятие 2
+**Теория:**
+- Тема 1: Automation Testing Framework (Playwright)
+- Тема 2: Locators
+- Тема 3: Waiters
+
+**Практика:**
+- Создаём первые тесты (предварительно согласуем System Under Test)
+- Без абстракций и Page Object'ов
+- Merge request в `main` (ревью от меня)
+- Упражнения: CSS selectors, XPath
+- Упражнения на ожидания (явные, неявные, fluent)
+- Таймауты в тестах
+
 ---
 
 ### Занятие 3
