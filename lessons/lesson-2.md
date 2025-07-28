@@ -102,3 +102,9 @@ test('Негативный сценарий логина', async ({ page }) => {
   await expect(page.locator('твой селектор')).toBeVisible();
 });
 ```
+
+---
+
+## Практика: Live Coding
+
+[Перейти к задачам для практики (Live Coding)]({{ site.baseurl }}/lessons/live-coding/lesson-2/live-coding-lesson-2.md)
