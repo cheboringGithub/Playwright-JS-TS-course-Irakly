@@ -7,7 +7,7 @@ title: Главная
 
 ## <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" style="height:1em;vertical-align:middle;"> [Тестовый проект](https://github.com/Iraklyweb/aqa)
 
-[Область знаний](knowledge-scope.md) | [Занятие 1](lessons/lesson-1.md)
+[Область знаний](knowledge-scope.md) | [Занятие 1](lessons/lesson-1.md) | [Занятие 2](lessons/lesson-2.md) | [Занятие 3](lessons/lesson-3.md)
 
 ---
 
@@ -25,31 +25,14 @@ title: Главная
 - Делаем merge request в `main` (добавляем меня в ревьюеры — я аппрувлю и мержу)
 
 ### Занятие 2
-**Теория:**
-- Тема 1: Automation Testing Framework (**Playwright**)
-- Тема 2: Locators
-- Тема 3: Waiters
-
-**Практика:**
-- Создаём первые тесты (предварительно согласуем System Under Test)
-- Без абстракций и **Page Object**'ов
-- Merge request в `main` (ревью от меня)
-- Упражнения: **CSS selectors**, **XPath**
-- Упражнения на ожидания (явные, неявные, fluent)
-- Таймауты в тестах
+**Практическое задание:**
+- [См. подробности в lesson-2.md](lessons/lesson-2.md)
 
 ---
 
 ### Занятие 3
-**Теория:**
-- Framework Architecture (Multilayered, **PageObject**, **PageElements**, Functional Helpers)
-- **Loggers**, **Reporters**
-- **Fixtures**
-
-**Практика:**
-- Архитектура: **Page Objects**, **Page Elements**, Helpers
-- Кастомизация логгера и репортера
-- Создание и настройка фикстур
+**Практическое задание:**
+- [См. подробности в lesson-3.md](lessons/lesson-3.md)
 
 ---
 
