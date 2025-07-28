@@ -42,6 +42,10 @@ title: Занятие 2
 
 ## Практическое задание
 
+## Практика: Live Coding
+
+[Перейти к задачам для практики (Live Coding)]({{ site.baseurl }}/lessons/live-coding/lesson-2/live-coding-lesson-2.md)
+
 > **Примечание:** Все задания выполняем без создания абстракций и Page Object'ов — это будет рассмотрено в следующих занятиях.
 
 **Создайте ветку с заданием `task-2` и в ней автоматизируйте тест-кейсы для [saucedemo.com](https://www.saucedemo.com/)**
@@ -104,7 +108,3 @@ test('Негативный сценарий логина', async ({ page }) => {
 ```
 
 ---
-
-## Практика: Live Coding
-
-[Перейти к задачам для практики (Live Coding)]({{ site.baseurl }}/lessons/live-coding/lesson-2/live-coding-lesson-2.md)
