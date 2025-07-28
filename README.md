@@ -1,3 +1,7 @@
+# Playwright JS/TS Course
+
+## <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo" style="height:1em;vertical-align:middle;"> [Тестовый проект](https://github.com/Iraklyweb/aqa)
+
 ## 📚 План занятий
 
 ### Занятие 1
