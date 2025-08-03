@@ -18,29 +18,190 @@ title: Занятие 3
 - Из каких **уровней (слоев)** может состоять современный тестовый фреймворк?
 - Какие **паттерны проектирования** применяются на разных уровнях фреймворка? Какие паттерны используют для бизнес-логики (**PageObject**, **PageElements**, **Functional Helpers**)?
 
----
+### Фреймворк тестирования vs фреймворк разработки — отличия
 
-## Тема 2: Логгеры и репортеры
+**Фреймворк разработки:**
+- Предназначен для создания приложений
+- Фокусируется на бизнес-логике и пользовательском интерфейсе
+- Оптимизирован для производительности и масштабируемости
+- Включает компоненты для UI, базы данных, API и т.д.
 
-**Вопросы для обсуждения:**
-- Что такое **репортер**? Для чего он нужен в автоматизации?
-- Какие **репортеры** доступны в Playwright и как их подключить?
-- Как создать **кастомный репортер** и зачем это может понадобиться?
+**Фреймворк тестирования:**
+- Предназначен для автоматизации тестирования
+- Фокусируется на проверке функциональности и качества
+- Оптимизирован для надежности и читаемости тестов
+- Включает компоненты для отчетности, логирования, управления данными
 
-**Рекомендуемые материалы:**
-- [Документация Playwright по репортерам](https://playwright.dev/docs/test-reporters)
+### Инструменты автоматизации — обзор рынка и особенности
 
----
+**Популярные инструменты:**
+- **Playwright** — кроссплатформенный, современный, быстрый
+- **Selenium** — классический, широко поддерживаемый
+- **Cypress** — для веб-приложений, удобный интерфейс
+- **WebdriverIO (WDIO)** — универсальный, модульный, поддерживает множество браузеров и протоколов
+- **Appium** — для мобильных приложений
 
-## Тема 3: Фикстуры (Fixtures)
+### Критерии выбора инструмента тестирования
 
-**Вопросы для обсуждения:**
-- Для чего нужны **фикстуры** в автоматизации тестирования?
-- Какие задачи решают фикстуры на практике?
-- Как работать с фикстурами в Playwright?
+**Технические критерии:**
+- Поддержка целевых платформ (Web, Mobile, Desktop)
+- Производительность и скорость выполнения
+- Стабильность и надежность
+- Интеграция с CI/CD
 
-**Рекомендуемые материалы:**
-- [Документация Playwright по фикстурам](https://playwright.dev/docs/test-fixtures)
+**Бизнес-критерии:**
+- Стоимость лицензирования и поддержки
+- Доступность специалистов
+- Сообщество и документация
+- Время обучения команды
+
+### Многослойная архитектура — структура и слои фреймворка
+
+**Уровни архитектуры:**
+1. **Уровень тестов** — бизнес-логика тестов
+2. **Уровень страниц** — Page Objects и элементы
+3. **Уровень утилит** — вспомогательные функции
+4. **Уровень данных** — управление тестовыми данными
+5. **Уровень конфигурации** — настройки окружения
+
+### Page Object Pattern
+
+**Что это такое?**
+Page Object Pattern — это паттерн проектирования, который инкапсулирует элементы веб-страницы и методы для взаимодействия с ними в отдельном классе. Вместо того чтобы писать селекторы и действия прямо в тестах, мы создаем отдельный класс для каждой страницы.
+
+**Какую проблему решает?**
+- **Дублирование кода** — селекторы и действия повторяются в разных тестах
+- **Хрупкость тестов** — при изменении UI нужно исправлять код во многих местах
+- **Низкая читаемость** — тесты содержат много технических деталей
+- **Сложность поддержки** — трудно понять, что делает тест
+
+**Официальная документация:**
+- [Playwright Page Object Model](https://playwright.dev/docs/pom)
+
+**Пример Page Object:**
+
+```typescript
+// pages/LoginPage.ts
+import { Page, Locator } from '@playwright/test';
+
+export class LoginPage {
+  // Элементы страницы
+  private readonly usernameInput: Locator;
+  private readonly passwordInput: Locator;
+  private readonly loginButton: Locator;
+  private readonly errorMessage: Locator;
+
+  constructor(page: Page) {
+    // Инициализация элементов как Locator
+    this.usernameInput = page.locator('#user-name');
+    this.passwordInput = page.locator('#password');
+    this.loginButton = page.locator('#login-button');
+    this.errorMessage = page.locator('[data-test="error"]');
+  }
+
+  // Методы для взаимодействия с элементами
+  async fillUsername(username: string): Promise<void> {
+    await this.usernameInput.fill(username);
+  }
+
+  async fillPassword(password: string): Promise<void> {
+    await this.passwordInput.fill(password);
+  }
+
+  async clickLogin(): Promise<void> {
+    await this.loginButton.click();
+  }
+
+  // Бизнес-метод: полный процесс логина
+  async login(username: string, password: string): Promise<void> {
+    await this.fillUsername(username);
+    await this.fillPassword(password);
+    await this.clickLogin();
+  }
+
+  // Методы для проверок
+  async getErrorMessage(): Promise<string> {
+    return await this.errorMessage.textContent() || '';
+  }
+
+  async isErrorMessageVisible(): Promise<boolean> {
+    return await this.errorMessage.isVisible();
+  }
+}
+```
+
+**Использование в тесте:**
+
+```typescript
+// tests/login.spec.ts
+import { test, expect } from '@playwright/test';
+import { LoginPage } from '../pages/LoginPage';
+
+test('Успешный логин', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  
+  await page.goto('https://www.saucedemo.com/');
+  await loginPage.login('standard_user', 'secret_sauce');
+  
+  await expect(page).toHaveURL(/.*inventory/);
+});
+
+test('Неуспешный логин', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  
+  await page.goto('https://www.saucedemo.com/');
+  await loginPage.login('standard_user', 'wrong_password');
+  
+  expect(await loginPage.getErrorMessage()).toContain('Epic sadface');
+});
+```
+
+**Построчный разбор кода:**
+
+**С точки зрения программирования:**
+```typescript
+export class LoginPage {
+  // Объявляем приватные поля типа Locator
+  private readonly usernameInput: Locator;
+  
+  constructor(page: Page) {
+    // Инициализируем элементы через page.locator()
+    this.usernameInput = page.locator('#user-name');
+  }
+  
+  async fillUsername(username: string): Promise<void> {
+    // Используем методы Locator API
+    await this.usernameInput.fill(username);
+  }
+}
+```
+
+**С точки зрения бизнес-логики:**
+```typescript
+// Бизнес-метод: инкапсулирует полный процесс логина
+async login(username: string, password: string): Promise<void> {
+  await this.fillUsername(username);  // Шаг 1: ввести логин
+  await this.fillPassword(password);  // Шаг 2: ввести пароль
+  await this.clickLogin();           // Шаг 3: нажать кнопку
+}
+
+// В тесте используем бизнес-метод
+await loginPage.login('standard_user', 'secret_sauce');
+```
+
+**Преимущества Page Object Pattern:**
+
+1. **Изоляция изменений** — при изменении UI исправляем только Page Object
+2. **Переиспользование** — один Page Object используется в разных тестах
+3. **Читаемость** — тесты описывают бизнес-логику, а не технические детали
+4. **Поддерживаемость** — легко найти и исправить проблемы
+5. **Тестируемость** — каждый Page Object можно тестировать отдельно
+
+
+
+
+
+
 
 ---
 
