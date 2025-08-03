@@ -9,7 +9,90 @@ title: Занятие 3
 
 ---
 
-## Тема 1: Архитектура фреймворка (многоуровневая)
+## Тема 1: TypeScript vs JavaScript
+
+**Что это такое?**
+TypeScript — это надмножество JavaScript, которое добавляет статическую типизацию. Это означает, что TypeScript проверяет типы данных на этапе компиляции, а не во время выполнения программы.
+
+**Система типов в JavaScript vs TypeScript:**
+
+### JavaScript — динамическая типизация:
+```javascript
+let value = "hello";
+value = 42;              // ✅ Можно менять тип
+
+function processData(data) {
+    return data.length;  // ❌ Упадет для number
+}
+
+processData("hello");     // ✅ 5
+processData(42);         // ❌ TypeError во время выполнения
+```
+
+### TypeScript — статическая типизация:
+```typescript
+let value: string = "hello";
+value = 42;              // ❌ Ошибка компиляции
+
+function processData(data: string): number {
+    return data.length;
+}
+
+processData("hello");     // ✅ 5
+processData(42);         // ❌ Ошибка компиляции
+```
+
+### Типы проверки:
+
+**JavaScript (динамическая):**
+- Проверка типов происходит во время выполнения
+- Ошибки обнаруживаются только при запуске программы
+- Гибкость, но риск ошибок
+
+**TypeScript (статическая):**
+- Проверка типов происходит на этапе компиляции
+- Ошибки обнаруживаются до запуска программы
+- Надежность, но требует явного указания типов
+
+### Что дает система типов:
+
+**1. Предотвращение ошибок:**
+```typescript
+function calculateTotal(price: number, quantity: number): number {
+    return price * quantity;
+}
+
+calculateTotal(10, 5);    // ✅ 50
+calculateTotal("10", 5);  // ❌ Ошибка компиляции
+```
+
+**2. Лучшая документация кода:**
+```typescript
+interface User {
+    id: number;
+    name: string;
+    email: string;
+}
+
+function createUser(userData: User): User {
+    return userData;
+}
+```
+
+**3. Безопасность рефакторинга:**
+```typescript
+interface ApiResponse {
+    data: User[];
+    total: number;
+}
+// При изменении интерфейса TypeScript найдет все места использования
+```
+
+
+
+---
+
+## Тема 2: Архитектура фреймворка (многоуровневая)
 
 **Вопросы для обсуждения:**
 - Что такое **фреймворк для автоматизации тестирования**? Чем он отличается от фреймворка для разработки?
@@ -81,25 +164,19 @@ Page Object Pattern — это паттерн проектирования, ко
 **Пример Page Object:**
 
 ```typescript
-// pages/LoginPage.ts
 import { Page, Locator } from '@playwright/test';
 
 export class LoginPage {
-  // Элементы страницы
   private readonly usernameInput: Locator;
   private readonly passwordInput: Locator;
   private readonly loginButton: Locator;
-  private readonly errorMessage: Locator;
 
   constructor(page: Page) {
-    // Инициализация элементов как Locator
     this.usernameInput = page.locator('#user-name');
     this.passwordInput = page.locator('#password');
     this.loginButton = page.locator('#login-button');
-    this.errorMessage = page.locator('[data-test="error"]');
   }
 
-  // Методы для взаимодействия с элементами
   async fillUsername(username: string): Promise<void> {
     await this.usernameInput.fill(username);
   }
@@ -118,22 +195,12 @@ export class LoginPage {
     await this.fillPassword(password);
     await this.clickLogin();
   }
-
-  // Методы для проверок
-  async getErrorMessage(): Promise<string> {
-    return await this.errorMessage.textContent() || '';
-  }
-
-  async isErrorMessageVisible(): Promise<boolean> {
-    return await this.errorMessage.isVisible();
-  }
 }
 ```
 
 **Использование в тесте:**
 
 ```typescript
-// tests/login.spec.ts
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 
@@ -145,57 +212,14 @@ test('Успешный логин', async ({ page }) => {
   
   await expect(page).toHaveURL(/.*inventory/);
 });
-
-test('Неуспешный логин', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  
-  await page.goto('https://www.saucedemo.com/');
-  await loginPage.login('standard_user', 'wrong_password');
-  
-  expect(await loginPage.getErrorMessage()).toContain('Epic sadface');
-});
-```
-
-**Построчный разбор кода:**
-
-**С точки зрения программирования:**
-```typescript
-export class LoginPage {
-  // Объявляем приватные поля типа Locator
-  private readonly usernameInput: Locator;
-  
-  constructor(page: Page) {
-    // Инициализируем элементы через page.locator()
-    this.usernameInput = page.locator('#user-name');
-  }
-  
-  async fillUsername(username: string): Promise<void> {
-    // Используем методы Locator API
-    await this.usernameInput.fill(username);
-  }
-}
-```
-
-**С точки зрения бизнес-логики:**
-```typescript
-// Бизнес-метод: инкапсулирует полный процесс логина
-async login(username: string, password: string): Promise<void> {
-  await this.fillUsername(username);  // Шаг 1: ввести логин
-  await this.fillPassword(password);  // Шаг 2: ввести пароль
-  await this.clickLogin();           // Шаг 3: нажать кнопку
-}
-
-// В тесте используем бизнес-метод
-await loginPage.login('standard_user', 'secret_sauce');
 ```
 
 **Преимущества Page Object Pattern:**
 
 1. **Изоляция изменений** — при изменении UI исправляем только Page Object
 2. **Переиспользование** — один Page Object используется в разных тестах
-3. **Читаемость** — тесты описывают бизнес-логику, а не технические детали
+3. **Читаемость** — тесты описывают бизнес-логику
 4. **Поддерживаемость** — легко найти и исправить проблемы
-5. **Тестируемость** — каждый Page Object можно тестировать отдельно
 
 
 
