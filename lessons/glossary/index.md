@@ -17,6 +17,8 @@ title: Глоссарий
 - [Hoisting](lesson-4/hoisting.md)
 - [Map/Set](lesson-4/map-set.md)
 - [Деструктуризация](lesson-4/destructuring.md)
+- [Методы массивов](lesson-4/array-methods.md)
+- [Итерация по коллекциям](lesson-4/iteration.md)
 
 ---
 
