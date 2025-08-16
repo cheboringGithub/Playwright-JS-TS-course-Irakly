@@ -7,61 +7,57 @@ title: Практика: Live Coding (Lesson 4)
 
 # Практика: Live Coding (Lesson 4)
 
-**Решайте задачи для закрепления знаний по JavaScript методам и объектам**
+**Решайте простые задачи для закрепления знаний по JavaScript методам и объектам**
 
 ## 🎯 JavaScript/TypeScript задачи
 
 ### 📚 Группа 1: JavaScript методы и объекты
-- **[Задача 1.1: Сложные операции с массивами (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-1-complex-array.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — фильтрация, деструктуризация, сортировка пользователей
-- **[Задача 1.2: Работа с объектами (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-2-advanced-objects.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — Object.keys, Object.values, Object.entries
-- **[Задача 1.3: Создание и работа с Map (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-3-map-operations.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — коллекции Map, методы set/get/has/delete
+- **[Задача 1.1: Базовые методы массивов (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-1-array-basics.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — filter, map, reduce, forEach
+- **[Задача 1.2: Методы объектов (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-2-object-methods.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — Object.keys, Object.values, Object.entries
+- **[Задача 1.3: Деструктуризация (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-3-destructuring.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — извлечение данных из объектов и массивов
+- **[Задача 1.4: Итерация по коллекциям (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-4-iteration.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — for...of, for...in, forEach, классический for
+- **[Задача 1.5: Map и Set (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-5-map-set.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — современные коллекции данных
+- **[Задача 1.6: Стрелочные функции (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-6-arrow-functions.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — современный синтаксис функций
+- **[Задача 1.7: Комбинирование методов (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-1-7-combine-methods.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — цепочки методов массивов
 
-### 🔧 Группа 2: Методы массивов
-- **[Задача 2.1: Группировка по возрасту (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-2-1-group-by-age.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — reduce для группировки данных
-- **[Задача 2.2: Сумма заказов по пользователям (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-2-2-orders-summary.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — агрегация данных с reduce
-- **[Задача 2.3: Фильтрация и преобразование товаров (CodeSandbox)](https://codesandbox.io/p/github/cheboringGithub/Playwright-JS-TS-course-Irakly/main?file=%2Flessons%2Flive-coding%2Flesson-4%2Ftasks%2Flesson-4-task-2-3-filter-products.js&import=true&workspaceId=ws_Tu2yuZntEXjT34dsX6ekTD)** — комбинирование filter и map
-
-
+---
 
 ## 📖 Ответы на задачи
 
 ### 📚 Группа 1: JavaScript методы и объекты
-- **[Ответ к задаче 1.1](./answers/lesson-4-task-1-1-complex-array.answer.md)** — подробное решение с объяснением каждого шага
-- **[Ответ к задаче 1.2](./answers/lesson-4-task-1-2-advanced-objects.answer.md)** — работа с Object методами и примерами
-- **[Ответ к задаче 1.3](./answers/lesson-4-task-1-3-map-operations.answer.md)** — решение задач с Map коллекциями
-
-### 🔧 Группа 2: Методы массивов
-- **[Ответ к задаче 2.1](./answers/lesson-4-task-2-1-group-by-age.answer.md)** — группировка данных с reduce
-- **[Ответ к задаче 2.2](./answers/lesson-4-task-2-2-orders-summary.answer.md)** — агрегация и анализ заказов
-- **[Ответ к задаче 2.3](./answers/lesson-4-task-2-3-filter-products.answer.md)** — фильтрация и преобразование товаров
-
-
+- **[Ответ к задаче 1.1](./answers/lesson-4-task-1-1-array-basics.answer.md)** — базовые методы массивов с примерами
+- **[Ответ к задаче 1.2](./answers/lesson-4-task-1-2-object-methods.answer.md)** — методы объектов и их использование
+- **[Ответ к задаче 1.3](./answers/lesson-4-task-1-3-destructuring.answer.md)** — деструктуризация объектов и массивов
+- **[Ответ к задаче 1.4](./answers/lesson-4-task-1-4-iteration.answer.md)** — различные способы итерации
+- **[Ответ к задаче 1.5](./answers/lesson-4-task-1-5-map-set.answer.md)** — работа с Map и Set коллекциями
+- **[Ответ к задаче 1.6](./answers/lesson-4-task-1-6-arrow-functions.answer.md)** — стрелочные функции и их применение
+- **[Ответ к задаче 1.7](./answers/lesson-4-task-1-7-combine-methods.answer.md)** — комбинирование методов массивов
 
 ---
 
 ## 💡 Рекомендации по решению
 
 ### 📚 Для задач JavaScript методов и объектов:
-- **Изучите методы Map:** `set()`, `get()`, `has()`, `delete()`, `clear()`
-- **Используйте методы массивов:** `map()`, `filter()`, `reduce()`, `forEach()`
-- **Работайте с объектами:** `Object.keys()`, `Object.values()`, `Object.entries()`
-- **Применяйте деструктуризацию:** для извлечения нужных полей из объектов
+- **Начните с простых методов:** `filter()`, `map()`, `reduce()`, `forEach()`
+- **Изучите Object методы:** `Object.keys()`, `Object.values()`, `Object.entries()`
+- **Практикуйте деструктуризацию:** для извлечения данных из объектов и массивов
+- **Освойте итерацию:** `for...of`, `for...in`, `forEach()`, классический `for`
 
 ### 🔧 Для задач методов массивов:
-- **Применяйте `reduce()`:** для группировки и агрегации данных
-- **Используйте `filter()`:** для фильтрации элементов по условиям
-- **Комбинируйте методы:** `map()` + `filter()` для сложных преобразований
-- **Сортируйте данные:** `sort()` для упорядочивания результатов
+- **Применяйте `filter()`:** для фильтрации элементов по условиям
+- **Используйте `map()`:** для преобразования элементов
+- **Изучите `reduce()`:** для агрегации и накопления данных
+- **Комбинируйте методы:** создавайте цепочки для сложных операций
 
-
+---
 
 ## 📚 Полезные ресурсы
 
 ### 🔍 Документация MDN:
-- **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)** — коллекция ключ-значение
-- **[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)** — коллекция уникальных значений
 - **[Array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** — методы массивов
+- **[Object methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** — методы объектов
 - **[Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)** — деструктуризация
+- **[Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)** — стрелочные функции
 
 ### 📖 Учебные материалы:
 - **[learn.javascript.ru](https://learn.javascript.ru/)** — современный учебник JavaScript на русском
