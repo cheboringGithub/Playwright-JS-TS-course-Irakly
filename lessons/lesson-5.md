@@ -13,6 +13,10 @@ title: Занятие 5
 - **[learn.javascript.ru - Классы](https://learn.javascript.ru/classes)** — подробное руководство по классам в JavaScript
 - **[Хабр - Знакомство с ООП на примере JavaScript](https://habr.com/ru/companies/ruvds/articles/665290/)** — практическое введение в ООП с примерами
 
+### 🔧 **TypeScript документация**
+- **[scriptdev.ru - Модификаторы доступа](https://scriptdev.ru/guide/023/)** — подробное руководство по модификаторам доступа в TypeScript
+- **[scriptdev.ru - Интерфейсы](https://scriptdev.ru/guide/021/)** — руководство по интерфейсам и абстрактным классам в TypeScript
+
 ---
 
 ## Тема 1: Объектно-ориентированное программирование (ООП) в JavaScript
@@ -142,6 +146,8 @@ class LoginPage extends BasePage {
 
 ### Модификаторы доступа в TypeScript
 
+> 📚 **Документация:** [Модификаторы доступа в TypeScript](https://scriptdev.ru/guide/023/)
+
 **Типы модификаторов:**
 - `public` — доступен везде (по умолчанию)
 - `private` — доступен только внутри класса
@@ -178,6 +184,8 @@ class BankAccount {
 ```
 
 ### Интерфейсы и абстрактные классы
+
+> 📚 **Документация:** [Интерфейсы в TypeScript](https://scriptdev.ru/guide/021/) | [Абстрактные классы в TypeScript](https://scriptdev.ru/guide/021/)
 
 **Интерфейсы — контракты для классов:**
 ```typescript
@@ -220,27 +228,6 @@ abstract class Animal {
 class Dog extends Animal {
   makeSound(): string {
     return `${this.name} лает: Гав-гав!`;
-  }
-}
-```
-
-### Generics в классах
-
-**Переиспользуемые типы:**
-```typescript
-class Repository<T> {
-  private items: T[] = [];
-
-  add(item: T): void {
-    this.items.push(item);
-  }
-
-  getById(id: number): T | undefined {
-    return this.items[id];
-  }
-
-  getAll(): T[] {
-    return [...this.items];
   }
 }
 
@@ -299,168 +286,6 @@ class LoginPage extends BasePage {
 **3. Рефакторинг** — безопасное переименование и изменение структуры
 **4. Документация** — типы служат документацией к коду
 **5. Отладка** — более точные сообщения об ошибках
-
----
-
-## Тема 3: Практическое применение ООП в тестах
-
-**Вопросы для обсуждения:**
-- Как применить **[инкапсуляцию]({{ site.baseurl }}/lessons/glossary/lesson-5/encapsulation.md)** в Page Object Pattern?
-- Когда использовать **[наследование]({{ site.baseurl }}/lessons/glossary/lesson-5/inheritance.md)** vs **[композицию]({{ site.baseurl }}/lessons/glossary/lesson-5/composition.md)**?
-- Как реализовать **[полиморфизм]({{ site.baseurl }}/lessons/glossary/lesson-5/polymorphism.md)** в тестах?
-- Какие паттерны ООП полезны для автоматизации?
-
-### Композиция vs Наследование в тестах
-
-**Композиция — предпочтительный подход:**
-```typescript
-// Компоненты страницы
-class HeaderComponent {
-  private page: Page;
-  private logo: Locator;
-
-  constructor(page: Page) {
-    this.page = page;
-    this.logo = page.locator('.logo');
-  }
-
-  public async clickLogo(): Promise<void> {
-    await this.logo.click();
-  }
-}
-
-class NavigationComponent {
-  private page: Page;
-  private menuItems: Locator;
-
-  constructor(page: Page) {
-    this.page = page;
-    this.menuItems = page.locator('.nav-item');
-  }
-
-  public async clickMenuItem(itemName: string): Promise<void> {
-    await this.menuItems.filter({ hasText: itemName }).click();
-  }
-}
-
-// Главная страница с композицией
-class HomePage {
-  private page: Page;
-  private header: HeaderComponent;
-  private navigation: NavigationComponent;
-
-  constructor(page: Page) {
-    this.page = page;
-    this.header = new HeaderComponent(page);
-    this.navigation = new NavigationComponent(page);
-  }
-
-  public async navigateToHome(): Promise<void> {
-    await this.header.clickLogo();
-  }
-
-  public async navigateToSection(section: string): Promise<void> {
-    await this.navigation.clickMenuItem(section);
-  }
-}
-```
-
-**Наследование — для общих функций:**
-```typescript
-// Базовый класс для всех страниц
-abstract class BasePage {
-  protected page: Page;
-
-  constructor(page: Page) {
-    this.page = page;
-  }
-
-  protected async waitForLoad(): Promise<void> {
-    await this.page.waitForLoadState('networkidle');
-  }
-
-  public async takeScreenshot(): Promise<Buffer> {
-    return await this.page.screenshot();
-  }
-
-  public abstract getTitle(): Promise<string>;
-}
-
-// Конкретные страницы
-class LoginPage extends BasePage {
-  private usernameInput: Locator;
-  private passwordInput: Locator;
-
-  constructor(page: Page) {
-    super(page);
-    this.usernameInput = page.locator('#user-name');
-    this.passwordInput = page.locator('#password');
-  }
-
-  public async login(username: string, password: string): Promise<void> {
-    await this.usernameInput.fill(username);
-    await this.passwordInput.fill(password);
-    await this.waitForLoad();
-  }
-
-  public async getTitle(): Promise<string> {
-    return await this.page.title();
-  }
-}
-```
-
-### Полиморфизм в тестах
-
-**Один интерфейс — разные реализации:**
-```typescript
-// Интерфейс для всех форм
-interface FormComponent {
-  fill(value: string): Promise<void>;
-  clear(): Promise<void>;
-  getValue(): Promise<string>;
-}
-
-// Реализации для разных типов полей
-class TextInput implements FormComponent {
-  constructor(private locator: Locator) {}
-
-  public async fill(value: string): Promise<void> {
-    await this.locator.fill(value);
-  }
-
-  public async clear(): Promise<void> {
-    await this.locator.clear();
-  }
-
-  public async getValue(): Promise<string> {
-    return await this.locator.inputValue();
-  }
-}
-
-class SelectDropdown implements FormComponent {
-  constructor(private locator: Locator) {}
-
-  public async fill(value: string): Promise<void> {
-    await this.locator.selectOption(value);
-  }
-
-  public async clear(): Promise<void> {
-    await this.locator.selectOption('');
-  }
-
-  public async getValue(): Promise<string> {
-    return await this.locator.inputValue();
-  }
-}
-
-// Полиморфное использование
-async function fillForm(components: FormComponent[], values: string[]): Promise<void> {
-  for (let i = 0; i < components.length; i++) {
-    await components[i].fill(values[i]); // Разные реализации
-  }
-}
-```
-
 
 ---
 
